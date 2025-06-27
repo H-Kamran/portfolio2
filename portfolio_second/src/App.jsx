@@ -3,14 +3,20 @@ import { useState } from "react";
 // import viteLogo from '/vite.svg'
 import "./App.css";
 import Header from "./components/Header/Header.jsx";
+import Home from "./components/Home/Home.jsx";
+
+import { AnimatePresence } from "framer-motion";
 
 function App() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
   return (
-    <>
+    <AnimatePresence>
       <Header />
-      {/* <div>
+      <main>
+        <Home />
+
+        {/* <div>
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
@@ -30,7 +36,8 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p> */}
-    </>
+      </main>
+    </AnimatePresence>
   );
 }
 

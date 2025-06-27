@@ -1,0 +1,51 @@
+.home {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* position: relative; */
+}
+.home .home-content {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 5%;
+}
+/* .home .hire-btn{
+    position: absolute;
+    top: 2%;
+    right: 8%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    background-color: var(--primary-color-bg);
+    color: var(--text-color-dark);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+} */
+.home .photo {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  /* width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-image: url("../../assets/photo_bg.png");
+    background-size: cover;
+    background-position: center;
+    position: relative; */
+}
+.home .photo_bg {
+  /* width: 60%; */
+  height: 80%;
+  /* height: 100%; */
+  /* position: absolute; */
+  top: 0;
+  right: 0;
+  /* z-index: 0; */
+}
