@@ -1,5 +1,30 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  --primary-color: #fff;
+  --primary-color-bg: #fff;
+  
+  --secondary-color: #5B39D5;
+  --secondary-color-bg: #5B39D5;
+
+  --text-color-dark: #000;
+  --text-color-light: #fff;
+
+  /* --secondary-color: #7551fb;
+  --secondary-color-bg: #7551fb; */
+
+  
+  /* --secondary-color-lighter: #ffdd45;
+  --secondary-color-darker: #997d00; */
+
+  /* --text-color-light: #e3ddc3;
+  --text-color-dark: #06062b;
+  --text-color-alt: #eb4d47; */
+
+
+  /* font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -10,10 +35,15 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
+}
+* {
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
 }
 
-a {
+/* a {
   font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
@@ -65,4 +95,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
+} */
