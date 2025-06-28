@@ -9,22 +9,16 @@ export default function Home() {
       {/* <Header /> */}
       <div className="home-content">
         <motion.p
-          style={{ fontSize: "2rem", color: "var(--text-color-dark)" }}
           initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1,scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.1, ease: "easeInOut" }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.3, delay: 0, ease: "easeInOut" }}
         >
           Hello, I'm <span>Kamran Hasanov</span>
         </motion.p>
-        <p
-          style={{
-            fontSize: "4em",
-            fontWeight: "bold",
-            color: "var(--secondary-color)",
-          }}
-        >
-          WEB DEVELOPER
-        </p>
+        <div className="typewriter">
+          <p>WEB DEVELOPER</p>
+        </div>
+
         {/* <a href={cv} target="_blank" rel="noreferrer">
           <motion.button whileHover={{ scale: 1.1 }} className="cv-button">
             Download CV
@@ -39,9 +33,9 @@ export default function Home() {
           className="photo_bg"
           src={photo_bg}
           alt="Photo Background"
-          initial={{ x: "100vw", opacity: 0 }}
+          initial={{ x: "50vw", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
-          transition={{ type: "spring", stiffness: 100, damping: 15, duration: 1 }}
+          transition={{ type: "transition", duration: 0.5 }}
         />
       </div>
       {/* <div className="home__content">

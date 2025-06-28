@@ -11,7 +11,7 @@ import portfolioLogo from "../../assets/portfolio_logo.png";
 export default function Header() {
   const menuIcon = (
     <svg
-      fill="var(--text-color-dark)"
+      fill="var(--text-color-light)"
       width="20px"
       height="20px"
       viewBox="0 0 20 20"
@@ -40,9 +40,9 @@ export default function Header() {
 
   //   const [logoSrc, setLogoSrc] = useState(logoAlt);
   const [menuSrc, setMenuSrc] = useState(menuIcon);
+  const [navDisplay, setNavDisplay] = useState("");
   const [headerClass, setHeaderClass] = useState(null);
   const [linkClass, setLinkClass] = useState(null);
-  const [navDisplay, setNavDisplay] = useState("");
 
   const hideMenu = () => {
     setNavDisplay("");
@@ -118,7 +118,12 @@ export default function Header() {
           whileHover={{ scale: 1.1 }}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+          transition={{
+            duration: 0.7,
+            delay: 0.3,
+            ease: "easeOut",
+            scale: { duration: 0.15 },
+          }}
           type="button"
           className="hire-btn"
         >
