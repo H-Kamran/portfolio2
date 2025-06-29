@@ -4,6 +4,7 @@ import { useState } from "react";
 import "./App.css";
 import Header from "./components/Header/Header.jsx";
 import Home from "./components/Home/Home.jsx";
+import Skills from "./components/Skills/Skills.jsx";
 
 import { AnimatePresence } from "framer-motion";
 
@@ -15,6 +16,7 @@ function App() {
       <Header />
       <main>
         <Home />
+        <Skills />
 
         {/* <div>
         <a href="https://vite.dev" target="_blank">

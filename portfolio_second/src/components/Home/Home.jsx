@@ -5,7 +5,7 @@ import "./Home.css";
 
 export default function Home() {
   return (
-    <div className="home">
+    <div id="home" className="home">
       {/* <Header /> */}
       <div className="home-content">
         <motion.p

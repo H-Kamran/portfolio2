@@ -1,0 +1,108 @@
+.skills-container {
+  /* background-color: red; */
+  width: 100%;
+  height: 100vh;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skills-container .skills-header h1 {
+  color: var(--secondary-color);
+}
+
+.skills {
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+}
+
+.skills .about {
+  width: 40%;
+}
+.about p {
+  font-size: 1.2rem;
+  /* line-height: 1.5; */
+  text-align: justify;
+  color: var(--text-color);
+}
+
+.skills .skills-content {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.skills-content .skill-item {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  /* width: calc(100% - 20px);
+  padding: 10px; */
+  /* background-color: var(--secondary-color-darker); */
+}
+.skills-content .skill-name-container {
+  width: 15%;
+  padding-left: 5px;
+  color: var(--text-color-light);
+  background-color: var(--secondary-color-darker);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.skills-content .skill-name-container .skill-name{
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: var(--text-color-light);
+}
+
+.skills-content .skill-bg {
+  width: calc(85% - 5px);
+  background-color: var(--secondary-color-lighter);
+
+  display: flex;
+  justify-content: space-between;
+}
+.skill-percentage-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.skill-bg span{
+    /* padding: 15px; */
+    color: var(--text-color-dark);
+}
+
+.skill-bg .skill-bar {
+  height: 100%;
+  background-color: var(--secondary-color-bg);
+}
+.skill-bg .skill-lang {
+  width: 75%;
+}
+.skill-bg .skill-html {
+  width: 90%;
+}
+.skill-bg .skill-css {
+  width: 90%;
+}
+.skill-bg .skill-js {
+  width: 80%;
+}
+.skill-bg .skill-react {
+  width: 85%;
+}
+.skill-bg .skill-git {
+  width: 70%;
+}
