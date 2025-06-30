@@ -7,15 +7,13 @@ header {
   padding: 5px;
   top: 0;
   transition: 0.5s;
-  /* background-color: var(--primary-color-bg); */
-  /* background-color:brown; */
   height: 10vh;
   box-sizing: border-box;
 }
+.header-scroll {
+  background-color: var(--primary-color-bg);
+}
 
-/* .header-scroll {
-    background-color: var(--secondary-color);
-} */
 .header-right {
   display: flex;
   align-items: center;
@@ -31,6 +29,10 @@ header {
   text-decoration: none;
   /* font-size: 16px; */
   cursor: pointer;
+}
+.header-right .hire-btn-scroll {
+  background-color: var(--secondary-color-bg);
+  color: var(--text-color-light);
 }
 
 .header-left {
@@ -69,10 +71,6 @@ nav .menu li a {
 .header-left .app-logo {
   width: 80%;
 }
-/* header .app-logo {
-  width: 2rem;
-  margin-left: 3%;
-} */
 
 .menu li a.color {
   color: var(--text-color-dark);
@@ -81,26 +79,11 @@ nav .menu li a {
   color: var(--secondary-color);
 }
 
-/* .menu li a.color:hover{
-    color: var(--primary-color);
-} */
-
 header .menu-btn {
-  /* position: fixed; */
-  /* color: var(--secondary-color-bg); */
   margin-right: 3%;
-  /* width: 20px;
-    height: 20px; */
   display: none;
   z-index: 1;
 }
-
-/* .close-btn{
-    color: var(--secondary-color-bg);
-    font-size: 22px;
-    float: right;
-    display: none;
-} */
 
 @media (max-width: 1067px) {
   nav .menu li {
@@ -110,8 +93,6 @@ header .menu-btn {
     font-size: 16px;
   }
   .header-left .logo-container {
-    /* display: flex;
-    align-items: center; */
     width: 15%;
     margin-left: 1.5%;
   }

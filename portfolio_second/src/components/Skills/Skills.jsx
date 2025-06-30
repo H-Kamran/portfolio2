@@ -3,7 +3,6 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 export default function Skills() {
-  // Create refs for each skill bar
   const langRef = useRef(null);
   const htmlRef = useRef(null);
   const cssRef = useRef(null);
@@ -11,7 +10,6 @@ export default function Skills() {
   const reactRef = useRef(null);
   const gitRef = useRef(null);
 
-  // Use inView for each bar
   const langInView = useInView(langRef, { amount: 0.5 });
   const htmlInView = useInView(htmlRef, { amount: 0.5 });
   const cssInView = useInView(cssRef, { amount: 0.5 });

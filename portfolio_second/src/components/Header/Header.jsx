@@ -1,12 +1,9 @@
 import "./Header.css";
-import { useCallback, useEffect, useRef, useState } from "react";
+import {  useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 import logoSrc from "../../assets/kh_logo.png";
 import portfolioLogo from "../../assets/portfolio_logo.png";
-
-// import menu from "../../img/menu.svg";
-// import close from "../../img/close.svg";
 
 export default function Header() {
   const menuIcon = (
@@ -38,11 +35,27 @@ export default function Header() {
   const headerRef = useRef(null);
   const ulRef = useRef(null);
 
-  //   const [logoSrc, setLogoSrc] = useState(logoAlt);
   const [menuSrc, setMenuSrc] = useState(menuIcon);
   const [navDisplay, setNavDisplay] = useState("");
   const [headerClass, setHeaderClass] = useState(null);
-  const [linkClass, setLinkClass] = useState(null);
+  const [hireBtnClass, setHireBtnClass] = useState("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setHeaderClass("header-scroll");
+        setHireBtnClass("hire-btn-scroll");
+      } else {
+        setHeaderClass("");
+        setHireBtnClass("");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const hideMenu = () => {
     setNavDisplay("");
@@ -73,7 +86,7 @@ export default function Header() {
                 scale: 1.05,
               }}
             >
-              <a className={linkClass} href="#home" onClick={hideMenu}>
+              <a href="#home" onClick={hideMenu}>
                 Home
               </a>
             </motion.li>
@@ -84,7 +97,7 @@ export default function Header() {
                 scale: 1.05,
               }}
             >
-              <a className={linkClass} href="#skills" onClick={hideMenu}>
+              <a href="#skills" onClick={hideMenu}>
                 Skills
               </a>
             </motion.li>
@@ -95,7 +108,7 @@ export default function Header() {
                 scale: 1.05,
               }}
             >
-              <a className={linkClass} href="#about" onClick={hideMenu}>
+              <a href="#about" onClick={hideMenu}>
                 About
               </a>
             </motion.li>
@@ -106,7 +119,7 @@ export default function Header() {
                 scale: 1.05,
               }}
             >
-              <a className={linkClass} href="#contact" onClick={hideMenu}>
+              <a href="#contact" onClick={hideMenu}>
                 Contact
               </a>
             </motion.li>
@@ -125,7 +138,7 @@ export default function Header() {
             scale: { duration: 0.15 },
           }}
           type="button"
-          className="hire-btn"
+          className={`hire-btn${hireBtnClass ? " " + hireBtnClass : ""}`}
         >
           <span className="hire-btn-text">Hire me!</span>
         </motion.button>
