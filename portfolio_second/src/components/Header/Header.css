@@ -85,6 +85,11 @@ header .menu-btn {
   z-index: 1;
 }
 
+@media (max-width: 1124px) {
+  nav .menu li a {
+    font-size: 16px;
+  }
+}
 @media (max-width: 1067px) {
   nav .menu li {
     margin: 15px 2.5rem;
@@ -115,7 +120,7 @@ header .menu-btn {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px), (max-aspect-ratio: 1/1) {
   header {
     justify-content: space-between;
   }
@@ -134,6 +139,9 @@ header .menu-btn {
     justify-content: space-around;
     align-items: center;
     padding-right: 5%;
+  }
+  nav .menu li a {
+    font-size: 34px;
   }
   header .menu-btn {
     display: block;

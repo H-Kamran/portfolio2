@@ -6,9 +6,28 @@ import logoSrc from "../../assets/kh_logo.png";
 import portfolioLogo from "../../assets/portfolio_logo.png";
 
 export default function Header() {
+  const [scrolled, setScrolled] = useState(false);
+  const [menuState, setMenuState] = useState("menu"); // "menu" or "close"
+  const [navDisplay, setNavDisplay] = useState("");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const hideMenu = () => {
+    setNavDisplay("");
+    setMenuState("menu");
+  };
+
   const menuIcon = (
     <svg
-      fill="var(--text-color-light)"
+      fill={scrolled ? "var(--text-color-dark)" : "var(--text-color-light)"}
       width="20px"
       height="20px"
       viewBox="0 0 20 20"
@@ -17,9 +36,10 @@ export default function Header() {
       <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
     </svg>
   );
+  console.log(menuIcon);
   const closeIcon = (
     <svg
-      fill="var(--text-color-dark)"
+      fill={scrolled ? "var(--text-color-dark)" : "var(--text-color-light)"}
       width="20px"
       height="20px"
       viewBox="0 0 24 24"
@@ -35,38 +55,11 @@ export default function Header() {
   const headerRef = useRef(null);
   const ulRef = useRef(null);
 
-  const [menuSrc, setMenuSrc] = useState(menuIcon);
-  const [navDisplay, setNavDisplay] = useState("");
-  const [headerClass, setHeaderClass] = useState(null);
-  const [hireBtnClass, setHireBtnClass] = useState("");
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 0) {
-        setHeaderClass("header-scroll");
-        setHireBtnClass("hire-btn-scroll");
-      } else {
-        setHeaderClass("");
-        setHireBtnClass("");
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const hideMenu = () => {
-    setNavDisplay("");
-    setMenuSrc(menuIcon);
-  };
-
   return (
     <header
       id="header"
       ref={headerRef}
-      className={headerClass}
+      className={scrolled ? "header-scroll" : ""}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -138,7 +131,7 @@ export default function Header() {
             scale: { duration: 0.15 },
           }}
           type="button"
-          className={`hire-btn${hireBtnClass ? " " + hireBtnClass : ""}`}
+          className={`hire-btn${scrolled ? " hire-btn-scroll" : ""}`}
         >
           <span className="hire-btn-text">Hire me!</span>
         </motion.button>
@@ -146,12 +139,17 @@ export default function Header() {
       <span
         className="menu-btn"
         onClick={() => {
-          setMenuSrc(navDisplay === "" ? closeIcon : menuIcon);
-          setNavDisplay(navDisplay === "" ? "display-block" : "");
+          if (navDisplay === "") {
+            setMenuState("close");
+            setNavDisplay("display-block");
+          } else {
+            setMenuState("menu");
+            setNavDisplay("");
+          }
         }}
         style={{ cursor: "pointer" }}
       >
-        {menuSrc}
+        {menuState === "menu" ? menuIcon : closeIcon}
       </span>
     </header>
   );

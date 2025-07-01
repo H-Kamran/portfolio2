@@ -20,3 +20,11 @@
   margin: 0;
   padding: 0;
 }
+
+/* Device Type	CSS Media Query	Width Range (px)
+Small mobile	max-width: 480px	320 – 480px
+Mobile (base)	max-width: 640px	480 – 640px
+Tablet	      max-width: 768px	641 – 768px
+Small laptop	max-width: 1024px	769 – 1024px
+Desktop	      min-width: 1025px	1025px and up
+Large desktop	min-width: 1280px	1280px and up */
