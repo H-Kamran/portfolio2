@@ -32,9 +32,12 @@
 }
 
 .skills .about {
-  width: 40%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
 }
 .about p {
+  width: 80%;
   font-size: 1.2rem;
   text-align: justify;
   color: var(--text-color);
@@ -112,6 +115,11 @@
   width: 70%;
 }
 
+@media (max-width: 1280px) {
+  .about p {
+    width: 90%;
+  }
+}
 @media (max-width: 1024px) {
   .about p {
     font-size: 1rem;
@@ -179,7 +187,7 @@
 }
 
 @media (max-width: 480px) {
-  .skills{
+  .skills {
     padding: 10px;
   }
   .skills .about {

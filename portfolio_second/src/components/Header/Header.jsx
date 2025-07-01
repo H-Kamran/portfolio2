@@ -1,5 +1,5 @@
 import "./Header.css";
-import {  useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 import logoSrc from "../../assets/kh_logo.png";
