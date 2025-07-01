@@ -128,10 +128,10 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (max-aspect-ratio: 1/1) {
   .skills-container {
-    padding-top: 10vh;
-    height: 90vh;
+    padding-top: 60px;
+    height: auto;
   }
   .skills-container .skills-header {
     height: 15%;
@@ -151,6 +151,7 @@
     width: 80%;
   }
   .skills .skills-content {
+    margin-top: 40px;
     width: 90%;
   }
 
@@ -178,8 +179,18 @@
 }
 
 @media (max-width: 480px) {
+  .skills{
+    padding: 10px;
+  }
+  .skills .about {
+    width: 90%;
+  }
   .about p {
     font-size: 0.9rem;
+  }
+
+  .skills .skills-content {
+    width: 100%;
   }
   .skills-content .skill-name {
     font-size: 0.6rem;
@@ -189,8 +200,8 @@
   }
 }
 
-@media (max-aspect-ratio: 1/1) {
+/* @media (max-aspect-ratio: 1/1) {
   .skills-container {
     height: auto;
   }
-}
+} */
