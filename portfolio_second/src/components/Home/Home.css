@@ -149,25 +149,3 @@
     font-size: 2rem;
   }
 }
-
-/* @media (max-aspect-ratio: 1/1) {
-  .home {
-    flex-direction: column-reverse;
-    justify-content: flex-end;
-    height: auto;
-    min-height: 100vh;
-  }
-  .home .photo {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-  }
-  .home .photo .photo_bg {
-    width: 90%;
-    height: auto;
-  }
-
-  .home .home-content {
-    padding: 20px;
-  }
-} */

@@ -24,13 +24,18 @@ export default function Skills() {
       </div>
       <div className="skills">
         <div className="about">
-          <p>
+          <motion.p
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            viewport={{ amount: 0.7 }}
+          >
             In 2022, I earned my Bachelor's degree in Information Technologies
             from ASOIU. In 2024, I completed my Master's in Data Analytics at
             ASOIU. I’m passionate about programming and have been focused on
             frontend development for over a year. I build websites that are
             interactive, responsive, and accessible to all users.
-          </p>
+          </motion.p>
         </div>
         <div className="skills-content">
           <div className="skill-item">

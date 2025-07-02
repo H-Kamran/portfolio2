@@ -3,6 +3,24 @@ import { FiMail } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
 
+const containerVariants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+      when: "beforeChildren",
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
 export default function Contact() {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -44,83 +62,89 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="contact">
-      <div className="contact-head">
+    <motion.section
+      id="contact"
+      className="contact"
+    //   variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ amount: 0.5, once: false }}
+    >
+      <motion.div className="contact-head" variants={itemVariants}>
         <p>Contact</p>
-      </div>
-      <div className="contact-content">
-        <div className="social-medias-container">
-          <div className="social-media">
-            <div className="social-media-icon">
+      </motion.div>
+      <motion.div className="contact-content" variants={containerVariants}>
+        <motion.div className="social-medias-container" variants={containerVariants}>
+          <motion.div className="social-media" variants={itemVariants} whileHover={{ scale: 1.08, rotate: -2 }}>
+            <motion.div className="social-media-icon" whileHover={{ scale: 1.2, rotate: 10 }} transition={{ type: "spring", stiffness: 300 }}>
               <FaWhatsapp />
-            </div>
+            </motion.div>
             <div className="social-media-content">
               <p>WhatsApp</p>
               <a className="link" href="https://wa.me/994553845188">
                 <p>055 384 51 88</p>
               </a>
             </div>
-            {/* <a className="link" href="https://wa.me/994553845188">
-              Send message
-            </a> */}
-          </div>
-          <div className="social-media">
-            <div className="social-media-icon">
+          </motion.div>
+          <motion.div className="social-media" variants={itemVariants} whileHover={{ scale: 1.08, rotate: 2 }}>
+            <motion.div className="social-media-icon" whileHover={{ scale: 1.2, rotate: -10 }} transition={{ type: "spring", stiffness: 300 }}>
               <FiMail />
-            </div>
+            </motion.div>
             <div className="social-media-content">
               <p>Email</p>
               <a className="link" href="mailto:khesenov4444@gmail.com">
                 <p>khesenov4444@gmail.com</p>
               </a>
             </div>
-            {/* <a className="link" href="mailto:khesenov619@gmail.com">
-              Send email
-            </a> */}
-          </div>
-        </div>
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div>
-            <input
+          </motion.div>
+        </motion.div>
+        <motion.form className="contact-form" onSubmit={handleSubmit} variants={containerVariants}>
+          <motion.div variants={itemVariants}>
+            <motion.input
               type="text"
               id="name"
               name="name"
               className="contact-input"
               placeholder="Name"
+              variants={itemVariants}
             />
-            <input
+            <motion.input
               type="email"
               id="email"
               name="email"
               className="contact-input"
               placeholder="Email"
+              variants={itemVariants}
             />
-          </div>
-          <input
+          </motion.div>
+          <motion.input
             type="text"
             id="subject"
             name="subject"
             className="contact-input"
             placeholder="Subject"
+            variants={itemVariants}
           />
-          {/* <input type="text" id="message" className="contact-input" placeholder="Message" /> */}
-          <textarea
+          <motion.textarea
             id="message"
             name="message"
             className="contact-input"
             placeholder="Message"
             cols="0"
             rows="6"
-          ></textarea>
+            variants={itemVariants}
+          ></motion.textarea>
           <motion.button
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.08, boxShadow: "0 0 16px 2px var(--secondary-color)", backgroundColor: "var(--secondary-color)" }}
+            transition={{ type: "spring", stiffness: 300 }}
             type="submit"
             className="contact-button"
+            variants={itemVariants}
           >
             Send message
           </motion.button>
-        </form>
-      </div>
-    </section>
+        </motion.form>
+      </motion.div>
+    </motion.section>
   );
 }

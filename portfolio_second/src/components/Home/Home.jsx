@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
+import useTypewriterInView from "./useTypewriterInView";
 import photo_bg from "../../assets/photo_bg.png";
 import "./Home.css";
 
 export default function Home() {
+  const [typewriterRef, typewriterKey] = useTypewriterInView({ amount: 0.7 });
   return (
     <div id="home" className="home">
       <div className="home-content">
@@ -13,8 +15,8 @@ export default function Home() {
         >
           Hello, I'm <span>Kamran Hasanov</span>
         </motion.p>
-        <div className="typewriter">
-          <p>WEB DEVELOPER</p>
+        <div className="typewriter" ref={typewriterRef}>
+          <p key={typewriterKey}>WEB DEVELOPER</p>
         </div>
       </div>
       <div className="photo">
