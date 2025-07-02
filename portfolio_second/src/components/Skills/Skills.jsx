@@ -18,11 +18,11 @@ export default function Skills() {
   const gitInView = useInView(gitRef, { amount: 0.5 });
 
   return (
-    <div className="skills-container">
+    <div id="skills" className="skills-container">
       <div className="skills-header">
         <h1>About Me</h1>
       </div>
-      <div id="skills" className="skills">
+      <div className="skills">
         <div className="about">
           <p>
             In 2022, I earned my Bachelor's degree in Information Technologies
