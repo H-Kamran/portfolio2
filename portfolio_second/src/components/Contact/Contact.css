@@ -1,26 +1,57 @@
+.contact-confirmation-modern {
+  margin: 32px;
+  padding: 18px 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10);
+  text-align: center;
+  max-width: 400px;
+  font-size: 1.1rem;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-confirmation-success {
+  background: var(--secondary-color-bg);
+  color: var(--text-color-light);
+}
+.contact-confirmation-error {
+  background: var(--error-color);
+  color: var(--text-color-light);
+}
+
+.contact-confirmation-icon {
+  color: var(--text-color-light);
+  margin-right: 10px;
+  font-size: 1.3em;
+  vertical-align: middle;
+}
 .contact {
-  height: 100vh;
+  min-height: 80vh;
   background-color: var(--primary-color-bg);
-  display: grid;
-  grid-template-rows: 20% 20% 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* padding-top: 60px;
+  padding-bottom: 40px; */
 }
 
 .contact .contact-head {
   text-align: center;
-  grid-row-start: 2;
+  margin-bottom: 24px;
 }
 
 .contact .contact-head p {
   color: var(--secondary-color-bg);
   font-size: 2rem;
   font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .contact .contact-content {
   margin: 0 auto;
   width: 70%;
-  height: 60%;
-  grid-row-start: 3;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -252,9 +283,11 @@
   }
 }
 
+
 @media screen and (max-width: 768px), (max-aspect-ratio: 1/1) {
   .contact {
-    grid-template-rows: 5% 10% 85%;
+    padding-top: 30px;
+    padding-bottom: 20px;
   }
 
   .contact .contact-content {

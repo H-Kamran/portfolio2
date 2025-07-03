@@ -12,6 +12,8 @@
   --secondary-color-darker: #32159d;
   --secondary-color-lighter: #dfd7ff;
 
+  --error-color: #e74c3c;
+
   --text-color-dark: #000;
   --text-color-light: #fff;
 }

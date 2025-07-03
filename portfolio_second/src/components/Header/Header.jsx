@@ -36,7 +36,6 @@ export default function Header() {
       <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
     </svg>
   );
-  console.log(menuIcon);
   const closeIcon = (
     <svg
       fill={scrolled ? "var(--text-color-dark)" : "var(--text-color-light)"}
@@ -91,7 +90,7 @@ export default function Header() {
               }}
             >
               <a href="#skills" onClick={hideMenu}>
-                Skills
+                About
               </a>
             </motion.li>
             <motion.li
@@ -101,8 +100,8 @@ export default function Header() {
                 scale: 1.05,
               }}
             >
-              <a href="#about" onClick={hideMenu}>
-                About
+              <a href="#projects" onClick={hideMenu}>
+                Projects
               </a>
             </motion.li>
             <motion.li

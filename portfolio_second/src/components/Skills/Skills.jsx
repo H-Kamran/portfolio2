@@ -20,7 +20,14 @@ export default function Skills() {
   return (
     <div id="skills" className="skills-container">
       <div className="skills-header">
-        <h1>About Me</h1>
+        <motion.h1
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          viewport={{ amount: 0.7, once: false }}
+        >
+          About Me
+        </motion.h1>
       </div>
       <div className="skills">
         <div className="about">
@@ -28,7 +35,7 @@ export default function Skills() {
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            viewport={{ amount: 0.7 }}
+            viewport={{ amount: 0.1 }}
           >
             In 2022, I earned my Bachelor's degree in Information Technologies
             from ASOIU. In 2024, I completed my Master's in Data Analytics at

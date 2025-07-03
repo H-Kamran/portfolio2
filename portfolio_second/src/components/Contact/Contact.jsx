@@ -2,6 +2,7 @@ import "./Contact.css";
 import { FiMail } from "react-icons/fi";
 import { FaWhatsapp } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const containerVariants = {
   hidden: { opacity: 0, y: 40 },
@@ -22,6 +23,9 @@ const itemVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 export default function Contact() {
+  const [confirmation, setConfirmation] = useState("");
+  const [confirmationType, setConfirmationType] = useState("success"); // 'success' or 'error'
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const data = new FormData(evt.target);
@@ -30,10 +34,18 @@ export default function Contact() {
     let subject = data.get("subject");
     let message = data.get("message");
 
+    // Only send email if all fields are filled
+    if (!from_name || !from_email || !subject || !message) {
+      setConfirmationType("error");
+      setConfirmation("Please fill in all fields before sending your message.");
+      setTimeout(() => setConfirmation(""), 4000);
+      return;
+    }
+
     const info = {
-      service_id: "service_kvsioe4",
-      template_id: "template_5sgx5bh",
-      user_id: "we4gCtQVB0JdjnOd8",
+      service_id: "service_rb8a12f",
+      template_id: "template_1ccxzxa",
+      user_id: "u8DzCi9CDTx9jlwwT",
       template_params: {
         from_name,
         from_email,
@@ -49,23 +61,34 @@ export default function Contact() {
       },
       body: JSON.stringify(info),
     })
-      .then((resp) => resp.json())
-      .then((response) => {
-        console.log(response);
-        alert("Email is sent!");
+      .then((resp) => resp.text())
+      .then((responseText) => {
+        console.log(responseText);
+        if (responseText.trim() === "OK") {
+          setConfirmationType("success");
+          setConfirmation("Your message has been sent! Thank you.");
+          evt.target.reset();
+        } else {
+          setConfirmationType("error");
+          setConfirmation("There was an error sending your message. Please try again.");
+        }
+        setTimeout(() => setConfirmation(""), 4000);
       })
       .catch((err) => {
         console.log(err);
+        setConfirmationType("error");
+        setConfirmation(
+          "There was an error sending your message. Please try again."
+        );
+        setTimeout(() => setConfirmation(""), 4000);
       });
-
-    evt.target.reset();
   };
 
   return (
     <motion.section
       id="contact"
       className="contact"
-    //   variants={containerVariants}
+      //   variants={containerVariants}
       initial="hidden"
       whileInView="visible"
       viewport={{ amount: 0.5, once: false }}
@@ -74,9 +97,20 @@ export default function Contact() {
         <p>Contact</p>
       </motion.div>
       <motion.div className="contact-content" variants={containerVariants}>
-        <motion.div className="social-medias-container" variants={containerVariants}>
-          <motion.div className="social-media" variants={itemVariants} whileHover={{ scale: 1.08, rotate: -2 }}>
-            <motion.div className="social-media-icon" whileHover={{ scale: 1.2, rotate: 10 }} transition={{ type: "spring", stiffness: 300 }}>
+        <motion.div
+          className="social-medias-container"
+          variants={containerVariants}
+        >
+          <motion.div
+            className="social-media"
+            variants={itemVariants}
+            whileHover={{ scale: 1.08, rotate: -2 }}
+          >
+            <motion.div
+              className="social-media-icon"
+              whileHover={{ scale: 1.2, rotate: 10 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
               <FaWhatsapp />
             </motion.div>
             <div className="social-media-content">
@@ -86,8 +120,16 @@ export default function Contact() {
               </a>
             </div>
           </motion.div>
-          <motion.div className="social-media" variants={itemVariants} whileHover={{ scale: 1.08, rotate: 2 }}>
-            <motion.div className="social-media-icon" whileHover={{ scale: 1.2, rotate: -10 }} transition={{ type: "spring", stiffness: 300 }}>
+          <motion.div
+            className="social-media"
+            variants={itemVariants}
+            whileHover={{ scale: 1.08, rotate: 2 }}
+          >
+            <motion.div
+              className="social-media-icon"
+              whileHover={{ scale: 1.2, rotate: -10 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
               <FiMail />
             </motion.div>
             <div className="social-media-content">
@@ -98,7 +140,11 @@ export default function Contact() {
             </div>
           </motion.div>
         </motion.div>
-        <motion.form className="contact-form" onSubmit={handleSubmit} variants={containerVariants}>
+        <motion.form
+          className="contact-form"
+          onSubmit={handleSubmit}
+          variants={containerVariants}
+        >
           <motion.div variants={itemVariants}>
             <motion.input
               type="text"
@@ -135,7 +181,11 @@ export default function Contact() {
             variants={itemVariants}
           ></motion.textarea>
           <motion.button
-            whileHover={{ scale: 1.08, boxShadow: "0 0 16px 2px var(--secondary-color)", backgroundColor: "var(--secondary-color)" }}
+            whileHover={{
+              scale: 1.08,
+              boxShadow: "0 0 16px 2px var(--secondary-color)",
+              backgroundColor: "var(--secondary-color)",
+            }}
             transition={{ type: "spring", stiffness: 300 }}
             type="submit"
             className="contact-button"
@@ -145,6 +195,23 @@ export default function Contact() {
           </motion.button>
         </motion.form>
       </motion.div>
+      {confirmation && (
+        <motion.div
+          initial={{ opacity: 0, y: 30, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: 10, scale: 0.95 }}
+          className={`contact-confirmation-modern ${
+            confirmationType === "error"
+              ? "contact-confirmation-error"
+              : "contact-confirmation-success"
+          }`}
+        >
+          {/* <span className="contact-confirmation-icon">
+          {confirmationType === "error" ? "❌" : "✔️"}
+        </span> */}
+          {confirmation}
+        </motion.div>
+      )}
     </motion.section>
   );
 }
