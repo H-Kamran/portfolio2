@@ -9,6 +9,7 @@ header {
   transition: 0.5s;
   height: 10vh;
   box-sizing: border-box;
+  z-index: 1;
 }
 .header-scroll {
   background-color: var(--primary-color-bg);
