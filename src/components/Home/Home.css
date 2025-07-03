@@ -1,0 +1,151 @@
+.home {
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.home .home-content {
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 5%;
+}
+.home-content p {
+  font-size: 2rem;
+  color: var(--text-color-dark);
+}
+
+.home-content .typewriter {
+  display: flex;
+}
+.typewriter p {
+  font-size: 4em;
+  font-weight: bold;
+  color: var(--secondary-color);
+
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 1px solid var(--text-color-dark);
+  animation: typing 1s steps(50) forwards, blink 0.7s step-end infinite;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--text-color-dark);
+  }
+}
+
+.home .photo {
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 20px;
+}
+.home .photo_bg {
+  /* height: 80%; */
+
+  width: 750px;
+  height: 750px;
+
+  /* 768x723 */
+  /* width: 40vw;
+  height: 37vw; */
+}
+
+@media (max-width: 1340px) {
+  .home .photo_bg {
+    /* height: 80%; */
+    width: 650px;
+    height: 650px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .home-content p {
+    font-size: 1.6rem;
+  }
+  .typewriter p {
+    font-size: 3rem;
+  }
+  .home .photo .photo_bg {
+    /* height: 70%; */
+    width: 650px;
+    height: 650px;
+  }
+}
+@media (max-width: 1024px) {
+  .home-content p {
+    font-size: 1.3rem;
+  }
+  .typewriter p {
+    font-size: 2.3rem;
+  }
+  .home .photo .photo_bg {
+    /* height: 70%; */
+    width: 600px;
+    height: 600px;
+  }
+}
+@media (max-width: 900px) {
+  .home .photo .photo_bg {
+    width: 500px;
+    height: 500px;
+  }
+  .home-content p {
+    font-size: 1.2rem;
+  }
+  .typewriter p {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px), (max-aspect-ratio: 1/1) {
+  .home {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    height: auto;
+    /* min-height: 100vh; */
+  }
+  .home .photo {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .home .photo .photo_bg {
+    width: 90%;
+    height: auto;
+  }
+
+  .home .home-content {
+    margin-top: 40px;
+    padding: 20px;
+  }
+  .home-content p {
+    font-size: 1.5rem;
+  }
+  .typewriter p {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .home-content p {
+    font-size: 1.2rem;
+  }
+  .typewriter p {
+    font-size: 2rem;
+  }
+}
