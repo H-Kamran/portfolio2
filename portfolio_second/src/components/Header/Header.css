@@ -28,7 +28,7 @@ header {
   border: none;
   border-radius: 5px;
   text-decoration: none;
-  font-size: 22px;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 .header-right .hire-btn-scroll {
@@ -57,7 +57,7 @@ nav .menu li {
 nav .menu li a {
   color: var(--text-color-dark);
   text-decoration: none;
-  font-size: 25px;
+  font-size: 1.5rem;
 }
 
 .header-left .logo-container {
@@ -88,15 +88,15 @@ header .menu-btn {
 
 @media (max-width: 1280px) {
   nav .menu li a {
-    font-size: 18px;
+    font-size: 1.2rem;
   }
   .header-right .hire-btn {
-    font-size: 16px;
+    font-size: 1.2rem;
   }
 }
 @media (max-width: 1124px) {
   nav .menu li a {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 @media (max-width: 1067px) {
@@ -104,7 +104,7 @@ header .menu-btn {
     margin: 15px 2.5rem;
   }
   nav .menu li a {
-    font-size: 16px;
+    font-size: 1rem;
   }
   .header-left .logo-container {
     width: 15%;
@@ -116,7 +116,7 @@ header .menu-btn {
     margin: 15px 2.1rem;
   }
   nav .menu li a {
-    font-size: 14px;
+    font-size: 0.8rem;
   }
 }
 
