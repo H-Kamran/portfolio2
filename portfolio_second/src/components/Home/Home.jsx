@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import useTypewriterInView from "./useTypewriterInView";
-import photo_bg from "../../assets/photo_bg.png";
+import img from "../../assets/img.png";
 import "./Home.css";
 
 export default function Home() {
@@ -21,8 +21,8 @@ export default function Home() {
       </div>
       <div className="photo">
         <motion.img
-          className="photo_bg"
-          src={photo_bg}
+          className="photo_img"
+          src={img}
           alt="Photo Background"
           initial={{ x: "50vw", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}

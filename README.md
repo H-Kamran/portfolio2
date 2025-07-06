@@ -11,7 +11,7 @@ This is a modern, animated, and fully responsive portfolio website built with Re
 - **Easy Customization:** Update your info, skills, and projects in a few lines of code.
 
 ## 🚀 Demo
-![Portfolio Demo Screenshot](portfolio_second/src/assets/photo_bg.png)
+![Portfolio Demo Screenshot](portfolio_second/src/assets/img.png)
 
 ## 🛠️ Tech Stack
 - [React 19](https://react.dev/)
