@@ -1,6 +1,6 @@
 # Portfolio2 – Modern React Portfolio
 
-This is a modern, animated, and fully responsive portfolio website built with React and Vite. It showcases your skills, projects, and contact information with a clean UI, smooth animations, and best practices for accessibility and user experience.
+This is a modern, animated, and fully responsive portfolio website built with React and Vite. It showcases skills, projects, and contact information with a clean UI, smooth animations, and best practices for accessibility and user experience.
 
 ## ✨ Features
 - **Animated Sections:** Home, About/Skills, Projects, and Contact, all with framer-motion transitions and engaging UI.
@@ -9,9 +9,6 @@ This is a modern, animated, and fully responsive portfolio website built with Re
 - **Contact Form:** EmailJS integration for sending messages, with animated confirmation alerts and field validation.
 - **Project Showcase:** Highlight GitHub and CodeSandbox with animated blocks and icons.
 - **Easy Customization:** Update your info, skills, and projects in a few lines of code.
-
-## 🚀 Demo
-![Portfolio Demo Screenshot](portfolio_second/src/assets/img.png)
 
 ## 🛠️ Tech Stack
 - [React 19](https://react.dev/)
@@ -36,7 +33,7 @@ This is a modern, animated, and fully responsive portfolio website built with Re
    npm run dev
    ```
 4. **Open in your browser:**
-   Visit [http://localhost:5173](http://localhost:5173)
+   Visit [https://h-kamran.github.io/portfolio2/]([http://localhost:5173](https://h-kamran.github.io/portfolio2/))
 
 
 ## 📂 Folder Structure
