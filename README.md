@@ -33,7 +33,7 @@ This is a modern, animated, and fully responsive portfolio website built with Re
    npm run dev
    ```
 4. **Open in your browser:**
-   Visit [https://h-kamran.github.io/portfolio2/]([http://localhost:5173](https://h-kamran.github.io/portfolio2/))
+   Visit [https://h-kamran.github.io/portfolio2/](https://h-kamran.github.io/portfolio2/)
 
 
 ## 📂 Folder Structure
