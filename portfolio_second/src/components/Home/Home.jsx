@@ -23,8 +23,9 @@ export default function Home() {
           href={cv}
           download="CV_Kamran_Hasanov.pdf"
           className="download-cv-btn"
-          whileHover={{ scale: 1.08, backgroundColor: "var(--secondary-color-darker)" }}
-          transition={{ type: "spring", stiffness: 200 }}
+          whileHover={{ scale: 1.08 }}
+          whileTap={{ scale: 0.98 }}
+          transition={{ type: "spring", stiffness: 200, bounce: 0.4 }}
         >
           Download CV
         </motion.a>
