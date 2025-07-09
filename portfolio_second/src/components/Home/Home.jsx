@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import useTypewriterInView from "./useTypewriterInView";
 import img from "../../assets/img.png";
+import cv from "../../assets/CV_Kamran Hasanov.pdf";
 import "./Home.css";
 
 export default function Home() {
@@ -18,6 +19,15 @@ export default function Home() {
         <div className="typewriter" ref={typewriterRef}>
           <p key={typewriterKey}>WEB DEVELOPER</p>
         </div>
+        <motion.a
+          href={cv}
+          download="CV_Kamran_Hasanov.pdf"
+          className="download-cv-btn"
+          whileHover={{ scale: 1.08, backgroundColor: "var(--secondary-color-darker)" }}
+          transition={{ type: "spring", stiffness: 200 }}
+        >
+          Download CV
+        </motion.a>
       </div>
       <div className="photo">
         <motion.img

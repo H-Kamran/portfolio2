@@ -48,6 +48,22 @@
     border-color: var(--text-color-dark);
   }
 }
+.download-cv-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 22px;
+  background: var(--secondary-color);
+  color: var(--text-color-light);
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.download-cv-btn:hover {
+  background: var(--secondary-color-darker);
+  color: var(--text-color-light);
+}
 
 .home .photo {
   height: 100%;
@@ -90,6 +106,9 @@
     width: 54.17vw;
     height: 51vw;
   }
+  .download-cv-btn {
+    margin-top: 13px;
+  }
 }
 @media (max-width: 1024px) {
   .home-content p {
@@ -102,6 +121,10 @@
     /* height: 70%; */
     width: 59.48vw;
     height: 56vw;
+  }
+  .download-cv-btn {
+    font-size: 1rem;
+    padding: 9px 18px;
   }
 }
 @media (max-width: 900px) {
@@ -144,6 +167,10 @@
   .typewriter p {
     font-size: 2.5rem;
   }
+  .download-cv-btn {
+    font-size: 1.3rem;
+    margin-top: 10px;
+  }
 }
 @media (max-width: 480px) {
   .home-content p {
@@ -151,5 +178,9 @@
   }
   .typewriter p {
     font-size: 2rem;
+  }
+  .download-cv-btn {
+    font-size: 1rem;
+    margin-top: 14px;
   }
 }

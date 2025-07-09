@@ -119,7 +119,8 @@ export default function Header() {
         </nav>
       </div>
       <div className="header-right">
-        <motion.button
+        <motion.a
+          href="#contact"
           whileHover={{ scale: 1.1 }}
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -129,11 +130,10 @@ export default function Header() {
             ease: "easeOut",
             scale: { duration: 0.15 },
           }}
-          type="button"
           className={`hire-btn${scrolled ? " hire-btn-scroll" : ""}`}
         >
           <span className="hire-btn-text">Hire me!</span>
-        </motion.button>
+        </motion.a>
       </div>
       <span
         className="menu-btn"
